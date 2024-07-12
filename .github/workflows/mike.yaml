@@ -48,10 +48,10 @@ jobs:
 # It's important you don't log the DATABASE_URL as output as it contains a username and
 # password for your database.
 # For example, you can uncomment the lines below to run a database migration command:
-#      - name: Run Migrations
-#        run: npm run db:migrate
-#        env:
-#          DATABASE_URL: "${{ steps.create_neon_branch.outputs.db_url_with_pooler }}"
+      - name: Run Migrations
+        run: echo $DATABASE_URL
+        env:
+          DATABASE_URL: "${{ steps.create_neon_branch.outputs.db_url_with_pooler }}"
 
   delete_neon_branch:
     name: Delete Neon Branch
